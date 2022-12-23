@@ -36,31 +36,3 @@ class BuildAppbar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => _appBar.preferredSize;
 }
-
-PreferredSizeWidget buildAppbar() {
-  return AppBar(
-    backgroundColor: todoBGColor,
-    elevation: 0,
-    title: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        const Icon(
-          Icons.menu,
-          color: Colors.black,
-        ),
-        SizedBox(
-          height: 40,
-          width: 40,
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: Image.asset(
-              'assets/images/img.png',
-            ),
-          ),
-        )
-      ],
-    ),
-  );
-}
-
-

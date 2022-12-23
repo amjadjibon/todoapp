@@ -23,8 +23,8 @@ class _HomeState extends State<Home> {
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
-          children: const [
-            SearchBox()
+          children: [
+            searchBox(),
           ],
         ),
       ),
