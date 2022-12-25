@@ -4,7 +4,7 @@ Widget searchBox() {
   return Container(
     padding: const EdgeInsets.symmetric(horizontal: 15),
     decoration: BoxDecoration(
-      color: Colors.white,
+      color: Colors.grey,
       borderRadius: BorderRadius.circular(20),
     ),
     child: const TextField(
@@ -13,12 +13,12 @@ Widget searchBox() {
         border: InputBorder.none,
         hintText: 'Search',
         hintStyle: TextStyle(
-          color: Colors.grey,
+          color: Colors.black,
           fontSize: 15,
         ),
         prefixIcon: Icon(
           Icons.search,
-          color: Colors.grey,
+          color: Colors.black,
         ),
         prefixIconConstraints: BoxConstraints(
           maxHeight: 20,

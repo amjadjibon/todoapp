@@ -25,19 +25,93 @@ class _HomeState extends State<Home> {
       backgroundColor: todoBGColor,
       appBar: const BuildAppbar(),
       bottomNavigationBar: buildBottomNavigationBar(),
-      body: Container(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 20,
-          vertical: 15,
-        ),
-        child: Column(
-          children: [
-            searchBox(),
-            _buildExpandedTodoList(),
-          ],
-        ),
+      body: Stack(
+        children: [
+          Container(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20,
+              vertical: 15,
+            ),
+            child: Column(
+              children: [
+                searchBox(),
+                _buildExpandedTodoList(),
+              ],
+            ),
+          ),
+           _buildAddTask(),
+        ],
       ),
     );
+  }
+
+  Align _buildAddTask() {
+    return Align(
+          alignment: Alignment.bottomCenter,
+          child: Row(
+            children: [
+              Expanded(
+                child: Container(
+                  margin: const EdgeInsets.only(
+                    left: 20,
+                    right: 20,
+                    bottom: 20,
+                  ),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 5,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.2),
+                        spreadRadius: 2,
+                        blurRadius: 5,
+                        offset: const Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: const TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Add new task',
+                      border: InputBorder.none,
+                    ),
+                  )
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.only(
+                  right: 20,
+                  bottom: 20,
+                ),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    minimumSize: const Size(60, 60),
+                    elevation: 10,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(20),
+                      ),
+                    ),
+                  ),
+                  onPressed: () {
+                    print('Add new task');
+                  },
+                  child: const Text(
+                    '+',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 40,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          )
+        );
   }
 
   Expanded _buildExpandedTodoList() {
