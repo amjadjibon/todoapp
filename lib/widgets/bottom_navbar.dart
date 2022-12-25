@@ -16,5 +16,19 @@ Widget buildBottomNavigationBar() {
         label: 'Profile',
       ),
     ],
+    onTap: (index) {
+      // Respond to item press.
+      switch (index) {
+        case 0:
+          print('Home');
+          break;
+        case 1:
+          print('List');
+          break;
+        case 2:
+          print('Profile');
+          break;
+      }
+    },
   );
 }
