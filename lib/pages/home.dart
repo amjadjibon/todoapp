@@ -45,6 +45,18 @@ class _HomeState extends State<Home> {
     );
   }
 
+  void _handleTodoChange(Todo todo) {
+    setState(() {
+      todo.isDone = !todo.isDone;
+    });
+  }
+
+  void _handleTodoDelete(String id) {
+    setState(() {
+      widget.todoList.removeWhere((todo) => todo.id == id);
+    });
+  }
+
   Align _buildAddTask() {
     return Align(
           alignment: Alignment.bottomCenter,
@@ -120,7 +132,11 @@ class _HomeState extends State<Home> {
         children: [
           _buildAllTodoText(),
           for (Todo todo in widget.todoList)
-            TodoItems(todo: todo),
+            TodoItems(
+                todo: todo,
+                onTodoChange: _handleTodoChange,
+                onTodoDelete: _handleTodoDelete,
+            ),
         ],
       ),
     );
