@@ -7,8 +7,9 @@ Widget searchBox() {
       color: Colors.grey,
       borderRadius: BorderRadius.circular(20),
     ),
-    child: const TextField(
-      decoration: InputDecoration(
+    child: TextField(
+      onChanged: (value) => print(value),
+      decoration: const InputDecoration(
         contentPadding: EdgeInsets.all(0),
         border: InputBorder.none,
         hintText: 'Search',
