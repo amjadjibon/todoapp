@@ -7,10 +7,19 @@ class TodoItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.only(
+        bottom: 20,
+      ),
       child: ListTile(
-        onTap: () {},
+        onTap: () {
+          print('Tapped');
+        },
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
+        ),
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 20,
+          vertical: 5,
         ),
         tileColor: Colors.white,
         leading: const Icon(
@@ -25,9 +34,25 @@ class TodoItems extends StatelessWidget {
             decoration: TextDecoration.lineThrough,
           ),
         ),
-        trailing: const Icon(
-          Icons.delete,
-          color: todoBlue,
+        trailing: Container(
+          padding: const EdgeInsets.all(0),
+          margin: const EdgeInsets.symmetric(vertical: 10),
+          height: 35,
+          width: 35,
+          decoration: BoxDecoration(
+            color: todoRed,
+            borderRadius: BorderRadius.circular(5),
+          ),
+          child: IconButton(
+            onPressed: () {
+              print('Delete');
+            },
+            icon: const Icon(
+              Icons.delete,
+              size: 18,
+              color: Colors.white,
+            ),
+          ),
         ),
       ),
     );

@@ -42,6 +42,17 @@ class _HomeState extends State<Home> {
         children: [
           _buildAllTodoText(),
           const TodoItems(),
+          const TodoItems(),
+          const TodoItems(),
+          const TodoItems(),
+          const TodoItems(),
+          const TodoItems(),
+          const TodoItems(),
+          const TodoItems(),
+          const TodoItems(),
+          const TodoItems(),
+          const TodoItems(),
+          const TodoItems(),
         ],
       ),
     );
