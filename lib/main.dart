@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         statusBarIconBrightness: Brightness.dark,
       ),
     );
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Todo List',
       home: Home(),

@@ -5,16 +5,20 @@ import 'package:todoapp/widgets/appbar.dart';
 import 'package:todoapp/widgets/search_box.dart';
 import 'package:todoapp/widgets/todo_items.dart';
 
+import '../models/todo.dart';
 import '../widgets/bottom_navbar.dart';
 
 class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+  Home({Key? key}) : super(key: key);
+
+  final todoList = Todo.todoList;
 
   @override
   State<Home> createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,18 +45,8 @@ class _HomeState extends State<Home> {
       child: ListView(
         children: [
           _buildAllTodoText(),
-          const TodoItems(),
-          const TodoItems(),
-          const TodoItems(),
-          const TodoItems(),
-          const TodoItems(),
-          const TodoItems(),
-          const TodoItems(),
-          const TodoItems(),
-          const TodoItems(),
-          const TodoItems(),
-          const TodoItems(),
-          const TodoItems(),
+          for (Todo todo in widget.todoList)
+            TodoItems(todo: todo),
         ],
       ),
     );
